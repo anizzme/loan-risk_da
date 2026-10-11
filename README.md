@@ -1,35 +1,20 @@
-# Data Analytics Portfolio – Anitha Baikani
+# Loan Risk Pipeline (LendingClub 2007-2011)
 
-Welcome to my Data Analytics Portfolio.
+Python ETL + SQL + automated report + Streamlit dashboard on 38,004 loans.
 
-I am a Computer Science graduate with hands-on experience in **Python, Data Analytics, Machine Learning, and AI**. This repository contains projects demonstrating data analysis, visualization, and insight generation using industry tools.
+## What it does
+1. etl.py extracts 2007-2011 loans, cleans them (Pandas, NumPy) and loads them into SQLite
+2. sql/risk_views.sql calculates charge-off rates by grade, purpose, income and state
+3. pipeline.py runs everything and report.py writes an Excel risk report
+4. app.py is an interactive Streamlit dashboard
 
-## Tools & Technologies
+## Key findings
+- Overall charge-off rate 14.87%
+- Grade A 5.77% versus grade G 32.55%
+- Lowest income band about 19% versus highest about 11%
 
-* Python (Pandas, NumPy, Matplotlib)
-* SQL
-* Microsoft Excel
-* Power BI
-* Data Cleaning
-* Data Visualization
-
-## Repository Structure
-
-Excel-Data-Analysis → Excel dashboards and analysis
-SQL-Data-Analysis → SQL querying and business insights
-Python-Data-Analysis → Data analysis using Python
-PowerBI-Dashboards → Interactive dashboards
-
-## About Me
-
-Computer Science Graduate (2023)
-Certified in Python, Data Analytics, and Data Science
-
-Leadership Program – Aspire Institute (Harvard Business School)
-
-## Connect with Me
-
-LinkedIn: https://www.linkedin.com/in/anitha-b-441829261/
-GitHub: https://github.com/anizzme
-Email: anithabaikani12@gmail.com
-
+## How to run
+Download accepted_2007_to_2018Q4.csv.gz from Kaggle (wordsforthewise/lending-club) into data/raw, then:
+pip install -r requirements.txt
+python pipeline.py
+streamlit run app.py
